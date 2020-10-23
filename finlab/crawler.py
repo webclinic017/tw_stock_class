@@ -12,6 +12,7 @@ import requests
 import datetime
 import pandas as pd
 import logging
+from tw_stock_class.finlab.git import git_init, BASE_DIR
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -861,6 +862,7 @@ def crawl_pe(date):
 # BASE_DIR = os.path.abspath(os.path.join(os.getcwd(), "../../tw_stock_class"))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 class TwStockClassPickler:
     crawlers_list = ['crawl_price', 'crawl_bargin', 'crawl_pe', 'crawl_benchmark', 'crawl_monthly_report']
     crawlers_once_list = ['crawl_twse_divide_ratio', 'crawl_otc_divide_ratio', 'crawl_twse_cap_reduction',
@@ -887,6 +889,8 @@ class TwStockClassPickler:
         return df
 
     def download_all(self, dt=False):
+        git_init()
+        os.system("git pull origin master")
         if dt is False:
             dt = datetime.date.today()
             dt = datetime.datetime(dt.year, dt.month, dt.day)
