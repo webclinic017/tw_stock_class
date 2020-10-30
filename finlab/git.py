@@ -6,13 +6,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def git_init():
     user_name = os.getenv("GITLAB_NAME", settings.CONFIG_DATA.get("GITLAB_NAME"))
-    user_password = os.getenv("GITLAB_PASSWORD", settings.CONFIG_DATA.get("GITLAB_PASSWORD"))
     mail = os.getenv("GMAIL", settings.CONFIG_DATA.get("GMAIL"))
     os.chdir(BASE_DIR)
-    os.system(f"git config --local user.email {mail}")
-    os.system(f"git config --local user.name {user_name}")
-    os.system("git remote rm origin")
-    os.system(f"git remote add origin https://{user_name}:{user_password}@gitlab.com/finlab_company_class/tw_stock.git")
+    os.system(f"git config --global user.email {mail}")
+    os.system(f"git config --global user.name {user_name}")
+    os.system("git pull origin master")
+
 
 def git_commit():
     git_init()

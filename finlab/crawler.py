@@ -890,7 +890,6 @@ class TwStockClassPickler:
 
     def download_all(self, dt=False):
         git_init()
-        os.system("git pull origin master")
         if dt is False:
             dt = datetime.date.today()
             dt = datetime.datetime(dt.year, dt.month, dt.day)
