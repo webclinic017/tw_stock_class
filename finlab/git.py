@@ -1,15 +1,11 @@
 import os
 import datetime
-# from django.conf import settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 def git_init():
-    # user_name = os.getenv("GITLAB_NAME", settings.CONFIG_DATA.get("GITLAB_NAME"))
-    # mail = os.getenv("GMAIL", settings.CONFIG_DATA.get("GMAIL"))
     os.chdir(BASE_DIR)
-    # os.system(f"git config --global user.email {mail}")
-    # os.system(f"git config --global user.name {user_name}")
     os.system("git pull origin master")
 
 
