@@ -12,7 +12,7 @@ import requests
 import datetime
 import pandas as pd
 import logging
-from tw_stock_class.finlab.git import git_init, BASE_DIR
+from finlab.git import git_init, BASE_DIR
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)

@@ -1,6 +1,5 @@
-import logging
-from tw_stock_class.finlab.crawler import *
-from tw_stock_class.finlab.git import git_commit
+from finlab.crawler import *
+from finlab.git import git_commit
 
 logging.basicConfig(level=logging.INFO)
 
