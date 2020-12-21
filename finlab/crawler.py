@@ -859,8 +859,8 @@ def crawl_pe(date):
         return pd.DataFrame()
 
 
-# BASE_DIR = os.path.abspath(os.path.join(os.getcwd(), "../../tw_stock_class"))
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class TwStockClassPickler:
