@@ -881,11 +881,11 @@ class TwStockClassPickler:
         if once:
             df = eval(func)()
             if df.empty is False:
-                df.to_pickle(f'{BASE_DIR}/tw_stock_class/data/{dir_name}/{dir_name}.pickle')
+                df.to_pickle(f'./data/{dir_name}/{dir_name}.pickle')
         else:
             df = eval(func)(dt)
             if df.empty is False:
-                df.to_pickle(f'{BASE_DIR}/tw_stock_class/data/{dir_name}/{file_name}.pickle')
+                df.to_pickle(f'./data/{dir_name}/{file_name}.pickle')
         return df
 
     def download_all(self, dt=False):
